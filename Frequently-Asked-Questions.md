@@ -3,10 +3,10 @@
   * [I just want to clean my device, what to do?](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#i-just-want-to-clean-my-device-what-to-do)
   * [Why should I use SD Maid?](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#why-should-i-use-sd-maid)
   * [Does SD Maid only work on sdcards?](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#does-sd-maid-only-work-on-sdcards)
+  * [Files appear again after scanning](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#files-appear-again-after-scanning)
   * [Recover deleted files](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#recover-deleted-files)
   * [Hanging](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#hanging)
   * [SD Maid v2/v3/v4](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#sd-maid-v2v3v4)
-  * [Screen overlay detected](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#screen-overlay-detected)
 * [SD Maid Pro](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#sd-maid-pro)
   * [Free vs Pro Version](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#free-vs-pro-version)
   * [What is the difference between the purchase options?](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#what-is-the-difference-between-the-purchase-options)
@@ -101,16 +101,10 @@ In short: **Use the latest version of SD Maid available for your device.**
 * SD Maid v3 was the main app version from 2013Q1 to 2016Q1. Its target is Android 2.3 to 4.0.
 * SD Maid v4 is the main app version since 2016Q1. Its target version is Android 4.1+.
 
-### Screen overlay detected
-The warning "Screen overlay detected" is a popup dialog you may see when trying to grant app permissions on an Android 6.0+ device. This is a security feature (from Android, not SD Maid) which prevents you from granting any permissions while an app is active that can draw on the screen, because malicious apps could alter the text of the permission dialog. The warning is not SD Maid specific and it's not SD Maid using the a screen overlay, but another application on your device.
-
-Solution:
-* Open settings
-* Disable the overlay permissions for all listed apps
-* Grant SD Maid (or any other app) it's permission
-* Enable the overlay permissions again
-
-[[[ https://cloud.githubusercontent.com/assets/1439229/19970701/1d9a9e9c-a1dd-11e6-8ed5-06fb81443707.jpg | height = 150px]]](https://cloud.githubusercontent.com/assets/1439229/19970701/1d9a9e9c-a1dd-11e6-8ed5-06fb81443707.jpg)
+### Files appear again after scanning
+In most cases this is a permission or setup issue. In rare cases there can be files that are just created again that fast. These are usually small though and [should be just excluded](https://github.com/d4rken/sdmaid-public/wiki/Exclusions) then.
+* If the SystemCleaner or CorpseFinder keeps showing the same files, check that you completed the [setup](https://github.com/d4rken/sdmaid-public/wiki/Setup) correctly. It's usually the permission for external secondary storage (i.e. removable sdcard) not being granted.
+* If your device is not rooted and the AppCleaner keeps showing the same huge amount of data, or it shows a lot less data than you would expect, then try [setting up the option for accessibility (ACS) based cache deletion](https://github.com/d4rken/sdmaid-public/wiki/AppCleaner#accessibility-service).
 
 ## SD Maid Pro
 ### Free vs Pro Version
