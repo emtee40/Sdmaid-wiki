@@ -67,15 +67,18 @@ Activating the ["accessibility service feature"](https://github.com/d4rken/sdmai
 Also see [Exclusions](https://github.com/d4rken/sdmaid-public/wiki/AppCleaner#some-appcleaner-exclusions-dont-work-without-root).
 
 ### Accessibility service
-When this feature is activated, and you use the AppCleaner, and SD Maid is on screen (this doesn't work via Scheduler), then SD Maid will open the system's settings window for each app and click the `Clear cache` button as fast as the system allows it.
+Cache cleaning via accessibility service is the only way to clean private app caches on Android 6.0+ without root. When this feature is activated, SD Maid will open the system's settings window for each app and click the `Clear cache` button as fast as the system allows it.
+With this option we can get closer to what is possible on a rooted device, without root access. Expendable files in private app storage, but outside of the default cache directory, are the remaining difference.
 
-Cache cleaning via accessibility service is the only way to clean private app caches on Android 6.0+ without root. This features requires SD Maid's accessibility service to be enabled in the system settings.
+This feature implicitly enables the option "Show inaccessible items". On Android 8.0+ it requires the ["Usage Statistics" permission](https://github.com/d4rken/sdmaid-public/wiki/Setup#usage-statistics-permission) so SD Maid can determine how large the default caches are for each app. 
 
-This feature requires ["Usage Statistics" permission](https://github.com/d4rken/sdmaid-public/wiki/Setup#usage-statistics-permission) to be granted on Android 8.0+ as it implicitly enables the option "Show inaccessible items".
-
-Also see [Exclusions](https://github.com/d4rken/sdmaid-public/wiki/AppCleaner#some-appcleaner-exclusions-dont-work-without-root).
+Caveats:
+* This doesn't work via [Scheduler](https://github.com/d4rken/sdmaid-public/wiki/Scheduler) because SD Maid has to use the screen.
+* Some [Exclusions](https://github.com/d4rken/sdmaid-public/wiki/AppCleaner#some-appcleaner-exclusions-dont-work-without-root) are ignored for paths covered by the system (`<pkg>/cache`) as SD Maid relies on the system to perform some of the deletion and has no control over the process at file level. Excluding a whole app should still work though.
+* How fast this can be performed may depend on how long and fancy your system's animations are when switching screens.
 
 ####  Troubleshooting
+* If deletion "seems" slow, and you see SD Maid "looping" multiple times on the same app, then SD Maid is looking for something and not finding it. To perform the automation, SD Maid relies on specific elements and texts on screen, if these change with a system update, then SD Maid maybe become lost. As a temporary solution, you can try setting your system language to english. A permanent solution requires an SD Maid update to include the new pattern of your ROM. Please create a bug ticket and include a [debug log](https://github.com/d4rken/sdmaid-public/wiki/Reporting-a-bug#debugrun-log) of SD Maid getting stuck and looping on an app.
 * If you are getting an error about ROM & locale then SD Maid does not understand your devices language, create an issue ticket and provide the [necessary details](https://github.com/d4rken/sdmaid-public/issues/2396)
 * If you get an error message on deletion stating that the accessibility service is enabled but not running, try restarting the device. The service is launched by the system, if it crashes or is killed, the system may consider it unreliable and not launch it again until reboot. The underlying cause is not clear:
     * There is currently no known error that could explain this, but if you record a logcat and spot an error, please open a ticket.
@@ -127,19 +130,6 @@ Be aware that a lot of other apps are not aware of this change in Android 6.0 an
 [[[ https://user-images.githubusercontent.com/1439229/41261716-51ce233c-6ddd-11e8-99f0-5a55dbcbfa24.png | height = 300px]]](https://user-images.githubusercontent.com/1439229/41261716-51ce233c-6ddd-11e8-99f0-5a55dbcbfa24.png)
 [[[ https://user-images.githubusercontent.com/1439229/41261718-53ea9b28-6ddd-11e8-9418-214b7bad8227.png | height = 300px]]](https://user-images.githubusercontent.com/1439229/41261718-53ea9b28-6ddd-11e8-9418-214b7bad8227.png)
 [[[ https://user-images.githubusercontent.com/1439229/41261723-561df39a-6ddd-11e8-9c75-80f82680efc7.png | height = 300px]]](https://user-images.githubusercontent.com/1439229/41261723-561df39a-6ddd-11e8-9c75-80f82680efc7.png)
-
-#### Accessibility service
-You may have seen apps that seem to achieve pre Android 6.0 behavior on unrooted Android 6.0+ devices. Meaning that they seem to be able to clear private caches on unrooted 6.0+ devices. I'll explain what they are doing and why SD Maid isn't doing it.
-
-Two things are used:
-The `Accessibility service` feature, which allows an app to read and interact with the screen just like a human (intended for people with disabilities), and the permission `SYSTEM_ALERT_WINDOW` which allows an app to draw on the screen over everything else.
-
-An app "cleaning cache" this way will display a screen over everything else (i.e. a curtain) and then behind it open the settings screen of each app, then press the "clear cache" button on every app. It literally clicks through the menu just like you would do yourself. Depending on your ROM and device you can often hear the clicks or view screen changes. It also very noticeable if you try to exit the app at this point or rotate the device.
-
-Why is this not a good solution?
-This only works while the phone is unlocked, open and not in use. Think of it as your device being tapped on by another person. Only one user can interact with the screen at a time. It's also not very fast because the app manually moves through the UI. This approach requires to open each apps settings screen and then finding and pressing the "clear cache" button. It's the only way to reliably automate this, as some UI parts are consistent between devices/ROMs and others are not. The app settings screen is consistent, the device storage screen is not. You don't have this restriction though and could just go into your devices storage screen, find and tap the cache entry and achieve the same result.
-
-~~SD Maid current doesn't use the accessibility service this way because it's neither fast nor convenient. There is an [on-going discussion](https://github.com/d4rken/sdmaid-public/issues/1588) about adding this here.~~ Support for [accessibility service based cache deletion](https://github.com/d4rken/sdmaid-public/wiki/AppCleaner#accessibility-service) was added in v4.14.0.
 
 ### Some AppCleaner exclusions don't work without root
 If you are using the AppCleaner on an unrooted device, you may have noticed that despite creating an exclusion for a specific app, it is still part of the scan results. This happens because when functions are used to delete caches that SD Maid doesn't have direct access to. If we cause the system to delete caches files for us, then the system does not know about the exclusions.
