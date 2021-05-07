@@ -129,7 +129,7 @@ Current upgrades:
 ### What is the difference between the purchase options?
 All purchase options get you SD Maid Pro with all the same app features. The difference lies in how you access SD Maid Pro.
 
-It's not possible to switch the purchase/unlock option without buying the upgrade again, some exceptions may apply.
+It's not possible to switch the purchase/unlock option without buying the upgrade again.
 
 #### [Unlocker app](https://play.google.com/store/apps/details?id=eu.thedarken.sdm.unlocker)
 The unlocker app is the original way to unlock SD Maid. It was the first upgrade method available (~2011). It's an extra app that you buy and install.
