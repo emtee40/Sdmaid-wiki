@@ -99,7 +99,8 @@ In short: **Use the latest version of SD Maid available for your device.**
 
 * SD Maid v2 was the main app version from 2012Q2 to 2013Q1. Its target is Android 2.1 to 2.2.
 * SD Maid v3 was the main app version from 2013Q1 to 2016Q1. Its target is Android 2.3 to 4.0.
-* SD Maid v4 is the main app version since 2016Q1. Its target version is Android 4.1+.
+* SD Maid v4 was the main app version from 2016Q1 to 2020Q3. Its target version is Android 4.1 to 4.4.
+* SD Maid v5 is the main app version since 2020Q3. Its target version is Android 5.0+.
 
 ### Files appear again after scanning
 In most cases this is a permission or setup issue. In rare cases there can be files that are just created again that fast. These are usually small though and [should be just excluded](https://github.com/d4rken/sdmaid-public/wiki/Exclusions) then.
