@@ -6,7 +6,7 @@
   * [Files appear again after scanning](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#files-appear-again-after-scanning)
   * [Recover deleted files](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#recover-deleted-files)
   * [Hanging](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#hanging)
-  * [SD Maid v2/v3/v4](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#sd-maid-v2v3v4)
+  * [SD Maid versions](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#sd-maid-versions)
 * [SD Maid Pro](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#sd-maid-pro)
   * [Free vs Pro Version](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#free-vs-pro-version)
   * [What is the difference between the purchase options?](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#what-is-the-difference-between-the-purchase-options)
@@ -90,7 +90,7 @@ Sometimes it may look like SD Maid is hanging during a task. Make sure to wait a
 
 A common cause for huge slowdowns, i.e. SD Maid seeming "stuck", are faulty sdcards. If the sdcard is damaged and/or the filesystem is corrupted the I/O performance drops drastically. To confirm this, remove the sdcard and try again. If your sdcard is faulty I would strongly advise to backup all your data from it. In some cases formating "seems" to fix the sdcard again but I would recommand to not risk it and just replace it.
 
-### SD Maid v2/v3/v4
+### SD Maid versions
 There are different versions available of SD Maid. Every few years SD Maid was completely overhauled to improve it through gained experience and to adopt to new Android environments. During these overhauls the minimum required Android version is usually raised due reduce workload, maintaining compatibility "hacks" for very old Android versions is usually not feasible when supporting the newest Android versions.
 
 It's possibly that newer versions seem slower but downgrading because of that is bad trade, you would gain speed but pay with thoroughness and safety. Searching through more and doing additional checks just costs time. Never versions may show less items to delete, not because they are worse, but because for specific reasons it is no longer considered good to remove these files. The goal is not to delete the most files, but the right files. Every change has a good reason.
