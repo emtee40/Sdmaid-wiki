@@ -139,6 +139,8 @@ The unlocker app is the original way to unlock SD Maid. It was the first upgrade
 * ❗ You need Google Play to do the initial install and keep it updated.
 * ❌ You need to have two apps installed.
 
+To restore SD Maid Pro you need to install the unlocker app. Log into Google Play with the Google account that contains the purchase and you will be able to reinstall the [unlocker app](https://play.google.com/store/apps/details?id=eu.thedarken.sdm.unlocker) without paying again (if there are issues, [see here](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#google-play-is-not-showing-the-purchase)).
+
 #### [In-app purchase](https://play.google.com/store/apps/details?id=eu.thedarken.sdm)
 The in-app purchase was added (late ~2019) due to Android 10 no longer allowing unlocker apps to hide themselves. You purchase the upgrade from inside the free version.
 
@@ -146,12 +148,16 @@ The in-app purchase was added (late ~2019) due to Android 10 no longer allowing 
 * ❗ Does not work without Google Play / Google Play Services. 
 * ❌ In-app purchases can not be shared through [Google Play Family Library](https://support.google.com/googleplay/answer/7007852)
 
+To restore SD Maid Pro, the account containing the in-app purchase needs to be logged into Google Play (if there are issues, [see here](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#google-play-is-not-showing-the-purchase)).
+
 #### [apps.darken.eu](https://apps.darken.eu/)
 This option was made available (early ~2019) so users without access to Google Play or the option to purchase something on Google Play can upgrade to SD Maid Pro.
 
 * ✔️ Doesn't require an extra app to be installed.
 * ✔️ Doesn't require Google Play or Google Play Services.
 * ❌ Requires an extra account on my server.
+
+To restore SD Maid Pro, you need to enter a current license key in the upgrade dialog, or click the magic link in the email you received. If you have lost the email, you can send yourself a new one via https://apps.darken.eu/: Enter your email to receive a login link, click that, and view [your current purchases](https://apps.darken.eu/user/inventory). The current license key is displayed, if you are on your phone you can click the link or copy the key and you can also click the refresh button to generate a new one.
 
 ### On how many devices can I use SD Maid?
 #### Via Google Play
