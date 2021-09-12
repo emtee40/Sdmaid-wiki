@@ -127,8 +127,8 @@ Current upgrades:
 * (Forced) app moving to external storage on supported devices.
 * Sleeping well, knowing the developer is motivated to keep developing :tada: 
 
-### What is the difference between the purchase options?
-All purchase options get you SD Maid Pro with all the same app features. The difference lies in how you access SD Maid Pro.
+### Upgrade options
+All purchase options get you SD Maid Pro with all app features. The difference lies in how you access SD Maid Pro.
 
 It's not possible to switch the purchase/unlock option without buying the upgrade again.
 
@@ -139,7 +139,16 @@ The unlocker app is the original way to unlock SD Maid. It was the first upgrade
 * ❗ You need Google Play to do the initial install and keep it updated.
 * ❌ You need to have two apps installed.
 
-To restore SD Maid Pro you need to install the unlocker app. Log into Google Play with the Google account that contains the purchase and you will be able to reinstall the [unlocker app](https://play.google.com/store/apps/details?id=eu.thedarken.sdm.unlocker) without paying again (if there are issues, [see here](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#google-play-is-not-showing-the-purchase)).
+##### Restoring
+To restore SD Maid Pro you need to install the unlocker app. Log into Google Play with the Google account that contains the purchase and you will be able to reinstall the [unlocker app](https://play.google.com/store/apps/details?id=eu.thedarken.sdm.unlocker) without paying again.
+
+##### Troubleshooting
+* If Google Play doesn't let you install the app again without paying then you are likely using the wrong account.
+* You can see your purchases [here](https://wallet.google.com/manage/#transactions:filter=ALL) or [here](https://play.google.com/apps).
+* If you are absolutely sure it's the right account, try to install the unlocker remotely, via the Google Play website. This will force the Google Play app to synchronize.
+
+Note:
+If you uninstall an app shortly after purchasing it, Google Play automatically refunds your purchase. Currently the automatic refund window is [2 hours](https://support.google.com/googleplay/answer/2479637?hl=en). This is only happens once per app.
 
 #### [In-app purchase](https://play.google.com/store/apps/details?id=eu.thedarken.sdm)
 The in-app purchase was added (late ~2019) due to Android 10 no longer allowing unlocker apps to hide themselves. You purchase the upgrade from inside the free version.
@@ -148,7 +157,12 @@ The in-app purchase was added (late ~2019) due to Android 10 no longer allowing 
 * ❗ Does not work without Google Play / Google Play Services. 
 * ❌ In-app purchases can not be shared through [Google Play Family Library](https://support.google.com/googleplay/answer/7007852)
 
+##### Restoring
 To restore SD Maid Pro, the account containing the in-app purchase needs to be logged into Google Play (if there are issues, [see here](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#google-play-is-not-showing-the-purchase)).
+
+##### Troubleshooting
+* Sometimes the in-app purchase data is out of sync. Force close the Google Play app, clear the cache of the Google Play services app and reboot the device.
+* Google Play does not handle multiple accounts with multiple in-app purchases well. [It likes to have a "primary" account](https://github.com/android/play-billing-samples/issues/2), and if the desired IAP is not on that primary account, it might not be picked up. Sometimes clearing caches or switching accounts in the Google Play app helps.
 
 #### [apps.darken.eu](https://apps.darken.eu/)
 This option was made available (early ~2019) so users without access to Google Play or the option to purchase something on Google Play can upgrade to SD Maid Pro.
@@ -157,11 +171,18 @@ This option was made available (early ~2019) so users without access to Google P
 * ✔️ Doesn't require Google Play or Google Play Services.
 * ❌ Requires an extra account on my server.
 
+##### Restoring
 To restore SD Maid Pro, you need to enter a current license key in the upgrade dialog, or click the magic link in the email you received. If you have lost the email, you can send yourself a new one via https://apps.darken.eu/: Enter your email to receive a login link, click that, and view [your current purchases](https://apps.darken.eu/user/inventory). The current license key is displayed, if you are on your phone you can click the link or copy the key and you can also click the refresh button to generate a new one.
+
+##### Troubleshooting
+* Clicking the magic link does not work with all browsers and ROMs. If SD Maid is not opening or you are getting redirected, then you need to copy & paste the code manually.
+* When copy&pasting the key, check that there are no extra spaces at the start or end.
+* SD Maid needs internet to check the key, if you are blocking internet access, activation will not work.
+* Check if you can reach https://apps.darken.eu/ from your browser, if you can't there may be a server side issue.
 
 ### On how many devices can I use SD Maid?
 #### Via Google Play
-On as many devices as you like, if they all use the same Google account. If you are trying to install it to another device with the same account and it asks you to pay again, [see here](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#google-play-is-not-showing-the-purchase).
+On as many devices as you like, if they all use the same Google account. If you are trying to install it to another device with the same account and it asks you to pay again, that device may not know about it yet and you'll have to wait a bit.
 
 #### Via apps.darken.eu
 There is currently a limit of 10 simultaneous devices. Once reached you have to remove older devices via the website. Exceptions are possible though, just send me a mail :wink:.
@@ -173,29 +194,6 @@ This is not an SD Maid issue, but still a popular question. Apps purchased throu
 When upgrading to SD Maid Pro by using the unlocker app, the two apps should both be kept updated. If the unlocker app is too old SD Maid will display the setup process and ask you to upgrade. There will be an upgrade button that takes you to the [Google Play entry for the unlocker](https://play.google.com/store/apps/details?id=eu.thedarken.sdm.unlocker).
 
 If the Google account you are currently signed into does not contain a purchase for the [unlocker app](https://play.google.com/store/apps/details?id=eu.thedarken.sdm.unlocker) then the Google Play app does not offer you the option to upgrade and only shows buttons for `Open` and `Remove`. This can happen when upgrading to a new device and/or switching Google accounts. You need to find and log into Google Play [with the right Google Account](https://pay.google.com/payments/u/0/home) and the update option will appear. If all else fails, mail me.
-
-### Google Play is not showing the purchase
-Apps are purchased per Google account, not per device. Switching devices doesn't mean you have to buy an app again. If Google Play is not showing your purchase, you are either not logged in with the account your purchased the application with or the Google Play app has not yet syncronized with your list of purchases. You can see your purchases [here](https://wallet.google.com/manage/#transactions:filter=ALL) or [here](https://play.google.com/apps). This is a Google Play issue and has no relation to SD Maid itself.
-
-The following action are known to fix this:
-* Force closing and reopening Google Play.
-* Rebooting the device.
-* Triggering the install from the [Google Play](https://play.google.com/store/apps/details?id=eu.thedarken.sdm.unlocker) website. 
-* Using "Clear Data" on the Google Play app (`com.android.vending`).
-
-Note:
-If you uninstall an app shortly after purchasing it, Google Play automatically refunds your purchase. Currently the automatic refund window is [2 hours](https://support.google.com/googleplay/answer/2479637?hl=en). This is only happens once per app.
-
-### SD Maid is not enabling the pro features
-If the both SD Maid (`eu.thedarken.sdm`) and the SD Maid Pro plugin/unlocker (`eu.thedarken.sdm.unlocker`) are installed, SD Maid should enable all pro features. Detection of the SD Maid Pro happens on app launch and when closing/opening the UI.
-
-Known solutions:
-* Force close SD Maid or reboot the device and reopen SD Maid
-* The system did not correctly install either SD Maid or the unlocker. Uninstall both apps, reboot your device, install the unlocker app first, then SD Maids free version.
-* If either SD Maid or the unlocker has been modified the pro features will also not be unlocked. Ensure that you downloaded the apps from official sources (Google Play or [my server](https://sdmaid.darken.eu/download)) and that no app on your device modified them. There are some "security apps" that modify installed apps for questionable purporses.
-
-### I can't find SD Maid Pro on my device
-The SD Maid Pro plugin only has to be installed, but does not have to be actively launched. Due to this this the app contains an option that will hide its shortcut from your app drawer. To display the shortcut again, either uninstall and reinstall the app, or open SD Maids advanced settings which offers an option to do that.
 
 ### Hiding the unlocker app on Android 10
 Google removed the ability for apps to hide themselves on Android 10+. Workarounds:
