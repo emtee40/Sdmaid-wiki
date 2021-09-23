@@ -9,7 +9,7 @@
   * [SD Maid versions](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#sd-maid-versions)
 * [SD Maid Pro](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#sd-maid-pro)
   * [Free vs Pro Version](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#free-vs-pro-version)
-  * [What is the difference between the purchase options?](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#what-is-the-difference-between-the-purchase-options)
+  * [What is the difference between the purchase options?](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#upgrade-options)
   * [Factory-Reset / Device-Change](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#factory-reset--device-change)
   * [Google Play is not showing the purchase](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#google-play-is-not-showing-the-purchase)
   * [Unlocker update required](https://github.com/d4rken/sdmaid-public/wiki/Frequently-Asked-Questions#Unlocker-update-required)
