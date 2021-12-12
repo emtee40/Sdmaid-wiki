@@ -78,7 +78,11 @@ Caveats:
 * How fast this can be performed may depend on how long and fancy your system's animations are when switching screens.
 
 ####  Troubleshooting
-* If deletion "seems" slow, and you see SD Maid "looping" multiple times on the same app, then SD Maid is looking for something and not finding it. To perform the automation, SD Maid relies on specific elements and texts on screen, if these change with a system update, then SD Maid maybe become lost. As a temporary solution, you can try setting your system language to english. A permanent solution requires an SD Maid update to include the new pattern of your ROM. Please create a bug ticket and include a [debug log](https://github.com/d4rken/sdmaid-public/wiki/Reporting-a-bug#debugrun-log) of SD Maid getting stuck and looping on an app.
+* If deletion "seems" slow, and you see SD Maid "looping" multiple times on the same app, then SD Maid is looking for something and not finding it. To perform the automation, SD Maid relies on specific elements and texts on screen, if these change with a system update, then SD Maid may become lost.
+    * As a temporary solution, you can try setting your system language to english.
+    * A permanent solution requires an SD Maid update to include the new pattern of your ROM. Please create a bug ticket and include a [debug log](https://github.com/d4rken/sdmaid-public/wiki/Reporting-a-bug#debugrun-log) of SD Maid getting stuck and looping on an app.
+    * On SD Maid 5.1.9+, you can also manually enter a custom sequence within the AppCleaner settings. It's not as powerful as adding support via update, but if your ROM's UI is not too complicated, you can often make it work.
+
 * If you are getting an error about ROM & locale then SD Maid does not understand your devices language, create an issue ticket and provide the [necessary details](https://github.com/d4rken/sdmaid-public/issues/2396)
 * If you get an error message on deletion stating that the accessibility service is enabled but not running, try restarting the device. The service is launched by the system, if it crashes or is killed, the system may consider it unreliable and not launch it again until reboot. The underlying cause is not clear:
     * There is currently no known error that could explain this, but if you record a logcat and spot an error, please open a ticket.
