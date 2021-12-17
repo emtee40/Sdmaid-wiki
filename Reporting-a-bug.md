@@ -29,8 +29,6 @@ If SD Maid crashed I should have gotten an automatic crash report (unless you tu
 
 Record everything that SD Maid sees and does into a text file.
 
-**The following instructions are valid for SD Maid v4.13.2+.**
-
 The best thing you can provide to help fix an issue is a debug log of the problem manifesting. A debug log is a very detailed description of everything SD Maid did. Note that the file may private information in form of file names and pathes on your device.
 
 #### If you can still open SD Maid
