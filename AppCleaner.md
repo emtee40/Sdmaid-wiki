@@ -77,6 +77,24 @@ Caveats:
 * Some [Exclusions](https://github.com/d4rken/sdmaid-public/wiki/AppCleaner#some-appcleaner-exclusions-dont-work-without-root) are ignored for paths covered by the system (`<pkg>/cache`) as SD Maid relies on the system to perform some of the deletion and has no control over the process at file level. Excluding a whole app should still work though.
 * How fast this can be performed may depend on how long and fancy your system's animations are when switching screens.
 
+#### Custom accessibility sequence
+The accessibility service tries to click "Clear cache" for you. This automation is based on recognizing the right UI elements to click. This interaction is a bit brittle as it largely depends on matching texts, which may differ between languages, devices and Android versions.
+
+In some cases you can use this option to enable a workaround. When matching fails, SD Maid will retry several times until giving app after 10 seconds. If this is the case, then this option might help you. Enter the exact texts SD Maid has to click, separated by new lines, e.g. for most AOSP devices this could work:
+```
+Storage
+Clear cache
+Ok
+```
+SD Maid will first search for `Storage`, click it, then hopefully be on the next screen and able to click `Clear cache` which will show a confirmation containing `Ok` as button.
+
+To allow for maximum of compatibility, the custom sequence algorithm is a simpler than the built in matching for ROM/language combination that SD Maid supports out of the box:
+* It is less efficient in terms of speed as it's always the same routine and has no checks for ROM specific quirks
+* less robust due to having no ROM specific retry logic or checks. If the screen contains your keywords multiple times, SD Maid will click the first one found
+* It's also a little bit more dangerous as SD Maid will not ask twice if you make a mistake. If you tell SD Maid to click `Clear data`, SD Maid will delete app data instead of caches. So make sure to try the routine with a single app first before clicking the run all button.
+
+_Using this option will not automatically fix anything for the next update. You have to create a ticket on Github to get native support for your ROM/language combo. Include a debuglog of your custom sequence working._
+
 ####  Troubleshooting
 * If deletion "seems" slow, and you see SD Maid "looping" multiple times on the same app, then SD Maid is looking for something and not finding it. To perform the automation, SD Maid relies on specific elements and texts on screen, if these change with a system update, then SD Maid may become lost.
     * As a temporary solution, you can try setting your system language to english.
