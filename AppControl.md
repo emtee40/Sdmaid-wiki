@@ -97,5 +97,16 @@ Some ROMs don't correctly update an apps state (e.g. enabled/disabled) (as retur
 ### Add shortcut
 Adds an app shortcut to your home screen that directly opens the appcontrol page and refreshs it.
 
+### Custom action
+This option enables a new context menu action within AppControl that will execute accessibility service based UI automation.
+Think of it like [AppCleaner's accessibility service option](https://github.com/d4rken/sdmaid-public/wiki/AppCleaner#accessibility-service), just more generalized. SD Maid will start clicking the entered texts for every app you execute this action on.
+
+Execution always starts on the system details page of the target app. After that it's up to you, e.g. you could use it to batch force stop apps with a sequence like:
+```
+Force stop
+Ok
+```
+First press `Force stop`, then press `Ok` on the confirmation dialog.
+
 
 [[[ https://cloud.githubusercontent.com/assets/1439229/20377644/4e9fc21a-ac91-11e6-8315-ec3e67d5ba88.png | height = 300px]]](https://cloud.githubusercontent.com/assets/1439229/20377644/4e9fc21a-ac91-11e6-8315-ec3e67d5ba88.png)
